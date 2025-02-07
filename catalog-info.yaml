@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: k505rfmld-python-gitops
+  description: This is GitOps manifest for k505rfmld-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=k505rfmld-python
+    backstage.io/kubernetes-id: k505rfmld-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: k505rfmld-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:k505rfmld-python
